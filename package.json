@@ -1,0 +1,36 @@
+{
+  "name": "cordova-plugin-multi-media-picker",
+  "version": "1.0.0",
+  "description": "Cordova Volume Manager Plugin",
+  "cordova": {
+    "id": "cordova-plugin-multi-media-picker",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okanbeydanol/cordova-plugin-multi-media-picker.git"
+  },
+  "keywords": [
+    "cordova",
+    "volume",
+    "plugin"
+  ],
+  "engines": {
+    "cordova-ios": ">=3.6.0",
+    "cordova-android": ">=3.0.0"
+  },
+  "main": "www/MediaPicker.js",
+  "author": "Okan Beydanol <okan.beydanol@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "www/MediaPicker.d.ts",
+  "bugs": {
+    "url": "https://github.com/okanbeydanol/cordova-plugin-multi-media-picker/issues"
+  },
+  "homepage": "https://github.com/okanbeydanol/cordova-plugin-multi-media-picker#readme"
+}

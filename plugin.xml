@@ -1,0 +1,46 @@
+<?xml version='1.0.0' encoding='utf-8'?>
+<plugin
+  id="cordova-plugin-multi-media-picker"
+  version="1.0.0"
+  xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <author email="okan.beydanol@gmail.com">
+      Okan Beydanol
+  </author>
+  <name>MediaPicker</name>
+  <description>
+    Provides a Promise-based API for selecting multiple images and videos from the user's device on iOS and Android. Supports selection limits, optional loader overlay, and returns detailed info (file name, size, type, dimensions, duration) for each picked media file.
+  </description>
+  <license>MIT</license>
+  <engines>
+     <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+  <js-module name="MediaPicker" src="www/MediaPicker.js">
+    <clobbers target="cordova.plugins.MediaPicker" />
+  </js-module>
+  <platform name="ios">
+    <framework src="MediaPlayer.framework" />
+    <config-file parent="/*" target="config.xml">
+      <feature name="MediaPicker">
+        <param name="ios-package" value="MediaPicker" />
+      </feature>
+    </config-file>
+    <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
+      <string>Allow access to your photo library to pick media.</string>
+    </config-file>
+    <source-file src="src/ios/MediaPicker.swift" />
+</platform>
+<platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="MediaPicker">
+        <param name="android-package" value="com.okanbeydanol.mediaPicker.MediaPicker" />
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <uses-permission android:minSdkVersion="33" android:name="android.permission.READ_MEDIA_IMAGES"/>
+      <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    </config-file>
+    <source-file src="src/android/MediaPicker.java" target-dir="src/com/okanbeydanol/mediaPicker" />
+</platform>
+</plugin>
