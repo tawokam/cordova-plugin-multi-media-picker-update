@@ -29,6 +29,7 @@ document.addEventListener('deviceready', async function () {
     selectionLimit: 3,   // default 3
     showLoader: true     // default true
     imageOnly: true      // default false
+    mediaType: 'videos'  // 'images' | 'videos' | 'all'
   };
 
   try {
